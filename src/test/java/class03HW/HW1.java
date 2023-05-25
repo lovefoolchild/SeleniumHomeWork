@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+
 /* Use CSS and Xpath to do this:
     Open Chrome browser
     Go to “http://practice.syntaxtechs.net/input-form-demo.php”
