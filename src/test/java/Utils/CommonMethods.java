@@ -1,9 +1,14 @@
 package Utils;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class CommonMethods {
     public static WebDriver driver;
@@ -23,5 +28,28 @@ public class CommonMethods {
         }
         driver.manage().window().maximize();
         driver.get(url);
+    }
+
+    public static void implicitWait(int waitTime) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitTime));
+    }
+
+    public static void sendText(String text, WebElement element) {
+        element.clear();
+        element.sendKeys(text);
+    }
+    public static void selectDropDown1(String value, WebElement dropdown) {
+        Select choose = new Select(dropdown);
+        choose.selectByValue(value);
+    }
+
+    public static void selectDropDown2(String visibleText, WebElement dropdown) {
+        Select choose = new Select(dropdown);
+        choose.selectByVisibleText(visibleText);
+    }
+
+    public static void selectDropDown3(Integer index, WebElement dropdown) {
+        Select choose = new Select(dropdown);
+        choose.selectByIndex(index);
     }
 }
