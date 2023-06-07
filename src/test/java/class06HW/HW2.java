@@ -15,8 +15,6 @@ public class HW2 extends CommonMethods {
         String browser = "chrome";
         openBrowserAndLaunchSite(url, browser);
 
-        implicitWait(20);
-
         WebElement getNewUserBtn = driver.findElement(By.xpath("//button[@id='save']"));
         getNewUserBtn.click();
 

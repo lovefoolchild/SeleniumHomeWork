@@ -28,10 +28,7 @@ public class CommonMethods {
         }
         driver.manage().window().maximize();
         driver.get(url);
-    }
-
-    public static void implicitWait(int waitTime) {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitTime));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
 
     public static void sendText(String text, WebElement element) {
